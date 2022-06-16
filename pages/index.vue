@@ -2,6 +2,7 @@
   <v-container fluid>
     <v-row>
       <v-col class="primary pb-12" cols="12">
+        <!-- Home hero section -->
         <v-row>
           <v-col class="" cols="12" md="5" order-md="2">
             <capsule-image />
@@ -36,7 +37,8 @@
         </v-row>
       </v-col>
 
-      <v-col class="white py-8" cols="12">
+      <v-col class="white my-8" cols="12">
+        <!-- Small info button sections -->
         <div class="d-flex justify-center align-center">
           <p class="mt-3 mr-16 d-none d-md-block text-h4">
             Finn din nærmeste klinikk
@@ -49,16 +51,17 @@
       </v-col>
 
       <v-col class="white py-8" cols="12" md="10" offset-md="1">
+        <!-- 5 coloured info cards -->
         <v-row>
           <v-col cols="12" v-for="card in infoCards" md="4" :key="card">
-            <v-card min-height="400" :class="card.color">
+            <v-card min-height="400" class="mx-8" :class="card.color">
               <v-card-title class="white--text">
                 {{ card.title }}
               </v-card-title>
               <v-card-text>
                 <div class="card-text-inner">
                   <p class="white--text text-body-1">{{ card.description }}</p>
-                  <div class="d-flex flex-wrap">
+                  <div class="d-flex flex-wrap mt-5">
                     <v-btn
                       v-for="chip in card.chips"
                       :key="chip"
@@ -66,7 +69,7 @@
                       outlined
                       dark
                       rounded
-                      large
+                      small
                       >{{ chip }}</v-btn
                     >
                   </div>
@@ -80,6 +83,93 @@
                 </div>
               </v-card-text>
             </v-card>
+          </v-col>
+        </v-row>
+      </v-col>
+
+      <v-col class="my-10" cols="12" md="8" offset-md="2">
+        <!-- Two Info bullet point -->
+        <v-row>
+          <v-col v-for="card in infoBulletPoints" :key="card" cols="12" md="6">
+            <div class="d-flex align-start">
+              <v-avatar class="ml-8" size="100" color="teal lighten-5">
+                <v-icon size="80">{{ card.icon }}</v-icon>
+              </v-avatar>
+              <v-spacer></v-spacer>
+              <div>
+                <p class="text-h5 font-weight-medium">{{ card.title }}</p>
+                <div>
+                  <p v-for="point in card.points" :key="point">
+                    <v-icon left color="teal lighten-3">mdi-check-circle</v-icon
+                    >{{ point }}
+                  </p>
+                </div>
+              </div>
+              <v-spacer></v-spacer>
+            </div>
+          </v-col>
+        </v-row>
+      </v-col>
+
+      <v-col cols="12" class="teal lighten-5">
+        <!-- Digitale tjenester -->
+        <v-row>
+          <v-col cols="12" md="5" offset-md="1">
+            <inverted-capsule-image
+              image-src="https://cdn.sanity.io/images/5te9o5bn/development/36f05b4c60e28c1cf5e46b391f37c92bace8f525-4000x4000.png?q=75&fit=max&auto=format&dpr=0.5"
+            />
+          </v-col>
+          <v-col class="d-md-flex flex-column justify-center" cols="12" md="5">
+            <div>
+              <p class="text-h4">Digitale helsetjenester</p>
+              <p>
+                Snakk med en allmennlege, hudlege eller psykolog – fra senga,
+                kontoret, eller hvor du måtte befinne deg
+              </p>
+            </div>
+            <v-btn
+              class="mt-5 py-5"
+              width="200"
+              x-large
+              rounded
+              depressed
+              color="white"
+              ><v-icon left>mdi-arrow-right-circle</v-icon>Les mer her</v-btn
+            >
+          </v-col>
+        </v-row>
+      </v-col>
+
+      <v-col cols="12" class="">
+        <!-- Dette kan vi hjelper deg med -->
+        <v-row>
+          <v-col cols="12" md="5" order-md="2">
+            <capsule-image
+              image-src="https://cdn.sanity.io/images/5te9o5bn/development/cae22867a84dff930322166ae66f1c51332b552b-4000x4000.png?q=75&fit=max&auto=format&dpr=0.5"
+            />
+          </v-col>
+          <v-col
+            cols="12"
+            md="5"
+            offset-md="1"
+            class="d-md-flex flex-column justify-center"
+          >
+            <div>
+              <p class="text-h4">Dette kan vi hjelpe deg med</p>
+              <p>
+                Dr.Dropin kan hjelpe deg med et bredt spekter av medisinske
+                problemstillinger – de samme problemstillingene en fastlege
+                eller legevakt kan hjelpe deg med.
+              </p>
+            </div>
+            <v-btn class="mt-5 py-5" width="200" x-large depressed color="white"
+              ><v-icon left>mdi-arrow-right-circle</v-icon>Se alle
+              tjenester</v-btn
+            >
+            <v-btn class="py-5" width="200" x-large depressed color="white"
+              ><v-icon left>mdi-arrow-right-circle</v-icon>Ta en
+              koronatest</v-btn
+            >
           </v-col>
         </v-row>
       </v-col>
@@ -134,6 +224,26 @@ export default {
           color: 'teal lighten-2',
         },
       ],
+      infoBulletPoints: [
+        {
+          title: 'Alle helsetjenester',
+          icon: 'mdi-heart-plus',
+          points: [
+            'Utredning og behandling',
+            'Resepter og sykemelding​',
+            'Henvisninger',
+          ],
+        },
+        {
+          title: 'Kort ventetid',
+          icon: 'mdi-cellphone-check',
+          points: [
+            'Enkel bestilling',
+            'Lange åpningstider',
+            'Klinikk eller videosamtale',
+          ],
+        },
+      ],
     }
   },
 }
@@ -141,7 +251,7 @@ export default {
 
 <style scoped>
 .card-text-inner {
-  height: 320px;
+  height: 330px;
   display: flex;
   flex-direction: column;
 }

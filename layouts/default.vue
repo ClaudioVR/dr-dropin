@@ -29,11 +29,24 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar dark class="primary" flat fixed app>
-      <v-toolbar-title v-text="title" />
-      <NuxtLogo class="ml-1" />
+    <v-app-bar dark class="primary" flat hide-on-scroll app>
+      <div class="d-flex">
+        <v-toolbar-title>{{ title }}</v-toolbar-title>
+        <NuxtLogo class="ml-1" />
+      </div>
       <v-spacer />
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon class="d-md-none" @click.stop="drawer = !drawer" />
+      <v-tabs class="d-none d-md-inline-block" centered hide-slider>
+        <v-tabs-slider color="white"></v-tabs-slider>
+        <v-tab v-for="item in tabItems" :key="item">
+          <span class="text-h6 custom-transform-class text-none">{{
+            item
+          }}</span>
+        </v-tab>
+      </v-tabs>
+      <v-btn class="py-5" x-large rounded depressed color="white">
+        <span class="black--text">Bestill time</span></v-btn
+      >
     </v-app-bar>
     <v-main>
       <!-- <v-container class="primary"> -->
@@ -51,7 +64,15 @@ export default {
   name: 'DefaultLayout',
   data() {
     return {
+      title: 'Dr.Dropin',
       drawer: false,
+      tabItems: [
+        'Alle tjenester',
+        'Resept',
+        'Klinikker',
+        'For bedrifter',
+        'Om oss',
+      ],
       drawerItems: [
         {
           title: 'Allmennlege',
@@ -130,7 +151,6 @@ export default {
           to: '#',
         },
       ],
-      title: 'Dr.Dropin',
     }
   },
 }

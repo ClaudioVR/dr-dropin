@@ -10,8 +10,8 @@
           <v-col
             class="d-md-flex flex-column justify-center"
             cols="12"
-            md="5"
-            offset-md="1"
+            md="4"
+            offset-md="2"
           >
             <div>
               <p class="text-h4 white--text">Helsehjelp når du trenger det</p>
@@ -54,7 +54,12 @@
         <!-- 5 coloured info cards -->
         <v-row>
           <v-col cols="12" v-for="card in infoCards" md="4" :key="card">
-            <v-card min-height="400" class="mx-8" :class="card.color">
+            <v-card
+              min-height="400"
+              class="mx-3 rounded-lg"
+              flat
+              :class="card.color"
+            >
               <v-card-title class="white--text">
                 {{ card.title }}
               </v-card-title>
@@ -150,8 +155,8 @@
           </v-col>
           <v-col
             cols="12"
-            md="5"
-            offset-md="1"
+            md="4"
+            offset-md="2"
             class="d-md-flex flex-column justify-center"
           >
             <div>

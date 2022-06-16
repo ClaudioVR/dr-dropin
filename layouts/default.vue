@@ -2,44 +2,35 @@
   <v-app dark>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
+      class="primary darken-2"
+      right
       fixed
+      clipped
       app
+      width="100%"
     >
-      <v-list>
+      <div class="py-1 d-flex justify-end">
+        <v-btn dark fab text @click.stop="drawer = !drawer"><v-icon>mdi-close</v-icon></v-btn>
+      </div>
+      <v-list class="pt-0 primary darken-3">
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(item, i) in drawerItems"
           :key="i"
           :to="item.to"
           router
-          exact
+          class="d-block"
         >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
+          <v-divider class="white"></v-divider>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
+    <v-app-bar class="primary" fixed app>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
     <v-main>
       <v-container>
@@ -67,25 +58,90 @@ export default {
   name: 'DefaultLayout',
   data() {
     return {
-      clipped: false,
       drawer: false,
       fixed: false,
-      items: [
+      drawerItems: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
+          title: 'Allmennlege',
+          to: '#',
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          title: 'Hudlege',
+          to: '#',
+        },
+        {
+          title: 'Gynekolog',
+          to: '#',
+        },
+        {
+          title: 'Barnelege',
+          to: '#',
+        },
+        {
+          title: 'Fysioterapeut',
+          to: '#',
+        },
+        {
+          title: 'Kiropraktor',
+          to: '#',
+        },
+        {
+          title: 'Psykolog',
+          to: '#',
+        },
+        {
+          title: 'Plastikkirurg',
+          to: '#',
+        },
+        {
+          title: 'Jordmor',
+          to: '#',
+        },
+        {
+          title: 'Andre medisinske problemstillinger',
+          to: '#',
+        },
+        {
+          title: 'Resept',
+          to: '#',
+        },
+        {
+          title: 'Klinikker',
+          to: '#',
+        },
+        {
+          title: 'Koronatest',
+          to: '#',
+        },
+        {
+          title: 'For bedrifter',
+          to: '#',
+        },
+        {
+          title: 'Om oss',
+          to: '#',
+        },
+        {
+          title: 'Kontakt',
+          to: '#',
+        },
+        {
+          title: 'Spørsmål og svar',
+          to: '#',
+        },
+        {
+          title: 'Karriere',
+          to: '#',
+        },
+        {
+          title: 'Ledige stillinger',
+          to: '#',
         },
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js',
+      title: 'Dr.Dropin',
     }
   },
 }

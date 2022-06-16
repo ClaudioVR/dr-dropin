@@ -25,13 +25,15 @@
               </p>
             </div>
             <v-btn
+              nuxt
+              to="/bestillTime"
               class="mt-5 py-5"
               width="200"
               x-large
               rounded
               depressed
               color="white"
-              >Bestill time</v-btn
+              ><span class="black--text">Bestill time</span></v-btn
             >
           </v-col>
         </v-row>
@@ -53,7 +55,7 @@
       <v-col class="white py-8" cols="12" md="10" offset-md="1">
         <!-- 5 coloured info cards -->
         <v-row>
-          <v-col cols="12" v-for="card in infoCards" md="4" :key="card">
+          <v-col v-for="card in infoCards" :key="card.title" cols="12" md="4">
             <v-card
               min-height="400"
               class="mx-3 rounded-lg"
@@ -95,7 +97,12 @@
       <v-col class="my-10" cols="12" md="8" offset-md="2">
         <!-- Two Info bullet point -->
         <v-row>
-          <v-col v-for="card in infoBulletPoints" :key="card" cols="12" md="6">
+          <v-col
+            v-for="card in infoBulletPoints"
+            :key="card.title"
+            cols="12"
+            md="6"
+          >
             <div class="d-flex align-start">
               <v-avatar class="ml-8" size="100" color="teal lighten-5">
                 <v-icon size="80">{{ card.icon }}</v-icon>

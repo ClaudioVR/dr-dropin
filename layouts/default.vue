@@ -30,10 +30,12 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar dark class="primary" flat hide-on-scroll app>
-      <div class="d-flex">
-        <v-toolbar-title>{{ title }}</v-toolbar-title>
-        <NuxtLogo class="ml-1" />
-      </div>
+      <NuxtLink to="/">
+        <div class="d-flex">
+          <v-toolbar-title>{{ title }}</v-toolbar-title>
+          <NuxtLogo class="ml-1" />
+        </div>
+      </NuxtLink>
       <v-spacer />
       <v-app-bar-nav-icon class="d-md-none" @click.stop="drawer = !drawer" />
       <v-tabs class="d-none d-md-inline-block" centered hide-slider>
@@ -44,14 +46,12 @@
           }}</span>
         </v-tab>
       </v-tabs>
-      <v-btn class="py-5" x-large rounded depressed color="white">
+      <v-btn class="d-none d-md-block" x-large rounded depressed color="white">
         <span class="black--text">Bestill time</span></v-btn
       >
     </v-app-bar>
     <v-main>
-      <!-- <v-container class="primary"> -->
       <Nuxt />
-      <!-- </v-container> -->
     </v-main>
     <v-footer absolute app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
@@ -155,3 +155,10 @@ export default {
   },
 }
 </script>
+
+<style>
+.v-application a {
+  color: white !important;
+  text-decoration: none;
+}
+</style>

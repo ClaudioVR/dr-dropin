@@ -1,5 +1,11 @@
 # dr-dropin
 
+## A mock website project by Claudio Rescigno
+
+I'm using Nuxt, which builds on Vue.js to create a mock single page application of the famous Dr.Dropin website and services.
+
+User's should be able to complete the booking of an appointment as the app maintains state throughout the journey.
+
 ## Build Setup
 
 ```bash

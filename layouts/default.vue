@@ -1,16 +1,18 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       class="primary darken-2"
       right
       fixed
-      clipped
       app
       width="100%"
+      dark
     >
       <div class="py-1 d-flex justify-end">
-        <v-btn dark fab text @click.stop="drawer = !drawer"><v-icon>mdi-close</v-icon></v-btn>
+        <v-btn dark fab text @click.stop="drawer = !drawer"
+          ><v-icon>mdi-close</v-icon></v-btn
+        >
       </div>
       <v-list class="pt-0 primary darken-3">
         <v-list-item
@@ -27,27 +29,18 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar class="primary" fixed app>
+    <v-app-bar dark class="primary" flat fixed app>
       <v-toolbar-title v-text="title" />
+      <NuxtLogo class="ml-1" />
       <v-spacer />
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
     <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
+      <!-- <v-container class="primary"> -->
+      <Nuxt />
+      <!-- </v-container> -->
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer :absolute="!fixed" app>
+    <v-footer absolute app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
@@ -59,7 +52,6 @@ export default {
   data() {
     return {
       drawer: false,
-      fixed: false,
       drawerItems: [
         {
           title: 'Allmennlege',
@@ -138,9 +130,6 @@ export default {
           to: '#',
         },
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
       title: 'Dr.Dropin',
     }
   },

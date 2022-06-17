@@ -139,7 +139,7 @@ export default {
         selectedTime: time,
       }
       this.$store.commit('setDateTime', dateTime)
-      this.$store.commit('setProgress', 70)
+      this.$store.commit('setProgress', 80)
       this.$router.push('/avtaleTime/dinInformasjon')
     },
   },

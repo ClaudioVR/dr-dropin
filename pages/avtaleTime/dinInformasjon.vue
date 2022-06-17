@@ -6,30 +6,7 @@
       <p class="my-12 text-h3 white--text text-center">Din informasjon</p>
       <v-row>
         <v-col cols="12" md="4" offset-md="4">
-          <div class="card">
-            <p class="text-h6">
-              {{ formatedSelectedDate }} - kl
-              {{ $store.state.selectedDateTime.selectedTime }}
-            </p>
-            <p class="text-h6"></p>
-            <p class="my-0">
-              Dr.Dropin {{ $store.state.selectedKlinikk.name }}
-            </p>
-            <p class="my-0">{{ $store.state.selectedKlinikk.address }}</p>
-            <div class="mt-3">
-              <iframe
-                :src="$store.state.selectedKlinikk.gmaps"
-                width="100%"
-                height="200"
-                frameborder="0"
-                style="border: 0; border-radius: 8px"
-                allowfullscreen=""
-                aria-hidden="false"
-                tabindex="0"
-              >
-              </iframe>
-            </div>
-          </div>
+          <appointment-info-card />
           <v-form ref="form" v-model="valid" class="mt-8" lazy-validation>
             <p class="white--text mb-1">Navn *</p>
             <v-text-field
@@ -125,13 +102,6 @@ export default {
     menu: false,
     description: 'Vondt i magen',
   }),
-  computed: {
-    formatedSelectedDate() {
-      return new Date(
-        this.$store.state.selectedDateTime.selectedDate
-      ).toLocaleDateString('no-No')
-    },
-  },
   watch: {
     menu(val) {
       val && setTimeout(() => (this.activePicker = 'YEAR'))
@@ -140,7 +110,7 @@ export default {
   methods: {
     toNextStep() {
       // const personalInfo = ....
-      this.$store.commit('setProgress', 80)
+      this.$store.commit('setProgress', 90)
       this.$router.push('/avtaleTime/bekreftTime')
     },
     validate() {
@@ -157,13 +127,6 @@ export default {
 <style scoped>
 .wrapper {
   min-height: 100vh;
-}
-
-.card {
-  color: white;
-  padding: 12px;
-  border: 1px solid white;
-  border-radius: 5px;
 }
 
 .time-card {

@@ -42,9 +42,10 @@ export default {
         case 70:
         case 80:
         case 90:
+        case 100:
           return 'green'
         default:
-          return 'red'
+          return 'amber'
       }
     },
   },

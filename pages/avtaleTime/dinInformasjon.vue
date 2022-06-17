@@ -95,7 +95,13 @@
             ></v-textarea>
           </v-form>
 
-          <v-btn color="white" rounded x-large width="200" depressed
+          <v-btn
+            color="white"
+            rounded
+            x-large
+            width="200"
+            depressed
+            @click="validate"
             ><span class="black--text">Neste</span></v-btn
           >
         </v-col>
@@ -134,12 +140,12 @@ export default {
   methods: {
     toNextStep() {
       // const personalInfo = ....
-      this.$store.commit('setProgress', 70)
-      this.$router.push('/avtaleTime/velgKlinikk')
+      this.$store.commit('setProgress', 80)
+      this.$router.push('/avtaleTime/bekreftTime')
     },
     validate() {
       const isValid = this.$refs.form.validate()
-      if (isValid) alert('This is a valid form')
+      if (isValid) this.toNextStep()
     },
     save(date) {
       this.$refs.menu.save(date)

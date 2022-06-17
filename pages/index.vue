@@ -24,17 +24,7 @@
                 {{ phrase }}
               </p>
             </div>
-            <v-btn
-              nuxt
-              to="/avtaleTime"
-              class="mt-5 py-5"
-              width="200"
-              x-large
-              rounded
-              depressed
-              color="white"
-              ><span class="black--text">Bestill time</span></v-btn
-            >
+            <bestill-time-button class="mt-5" />
           </v-col>
         </v-row>
       </v-col>

@@ -3,15 +3,15 @@
     <appointment-progress />
 
     <div class="wrapper">
-      <p class="my-12 text-h3 white--text text-center">Velg behandling</p>
+      <p class="my-12 text-h3 white--text text-center">Velg område</p>
       <v-row>
         <v-col cols="12" md="4" offset-md="4">
           <div class="d-flex flex-column">
             <v-card
               v-for="item in behandling"
               :key="item"
-              :class="{ grey: item !== 'Klinikk' }"
-              class="py-2 mb-5 mx-md-3 rounded-lg"
+              :class="{ grey: item !== 'Oslo' }"
+              class="mb-5 mx-md-3 rounded-lg"
               flat
               @click.stop="toNextStep(item)"
             >
@@ -30,18 +30,25 @@
 
 <script>
 export default {
-  name: 'BestillTime',
+  name: 'VelgOmrade',
   layout: 'bookingAppointment',
   data() {
     return {
-      behandling: ['Klinikk', 'Videosamtale'],
+      behandling: [
+        'Oslo',
+        'Asker',
+        'Bergen',
+        'Bærum',
+        'Stavanger',
+        'Trondheim',
+      ],
     }
   },
   methods: {
     toNextStep(item) {
-      if (item === 'Klinikk') {
-        this.$store.commit('setProgress', 50)
-        this.$router.push('/avtaleTime/velgOmrade')
+      if (item === 'Oslo') {
+        this.$store.commit('setProgress', 60)
+        this.$router.push('/avtaleTime/velgKlinikk')
       }
     },
   },

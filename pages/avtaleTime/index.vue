@@ -13,7 +13,7 @@
               class="mb-5 mx-md-3 rounded-lg"
               :class="{
                 'card-flex-basis': $vuetify.breakpoint.mdAndUp,
-                grey: index !== 2,
+                grey: index !== 0,
               }"
               @click.stop="toNextStep(card.title)"
             >
@@ -52,6 +52,11 @@ export default {
     return {
       cards: [
         {
+          icon: 'mdi-hospital-box',
+          title: 'Allmennlege',
+          description: 'Møt allmennlege i klinkkk eller på videosamtale',
+        },
+        {
           icon: 'mdi-face-woman',
           title: 'Spesialister',
           description: 'Møt hudelege, barnelege, gynekolog og jordmor',
@@ -61,11 +66,6 @@ export default {
           title: 'Covid',
           description:
             'Koronatest, Fit to Fly attest, Proof of Recover eller råd',
-        },
-        {
-          icon: 'mdi-hospital-box',
-          title: 'Allmennlege',
-          description: 'Møt allmennlege i klinkkk eller på videosamtale',
         },
         {
           icon: 'mdi-human-handsup',
@@ -83,12 +83,12 @@ export default {
     }
   },
   mounted() {
-    this.$store.commit('setProgress', 10)
+    this.$store.commit('setProgress', 20)
   },
   methods: {
     toNextStep(title) {
       if (title === 'Allmennlege') {
-        this.$store.commit('setProgress', 20)
+        this.$store.commit('setProgress', 40)
         this.$router.push('/avtaleTime/velgBehandling')
       }
     },

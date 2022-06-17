@@ -46,9 +46,7 @@
           }}</span>
         </v-tab>
       </v-tabs>
-      <v-btn class="d-none d-md-block" x-large rounded depressed color="white">
-        <span class="black--text">Bestill time</span></v-btn
-      >
+      <bestill-time-button />
     </v-app-bar>
     <v-main>
       <Nuxt />

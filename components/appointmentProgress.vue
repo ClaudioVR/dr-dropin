@@ -32,12 +32,13 @@ export default {
       switch (this.progress) {
         case 10:
         case 20:
-        case 30:
           return 'red'
+        case 30:
         case 40:
+          return 'amber'
         case 50:
         case 60:
-          return 'amber'
+          return 'yellow'
         case 70:
         case 80:
         case 90:

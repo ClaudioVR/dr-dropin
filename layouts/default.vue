@@ -6,7 +6,7 @@
       right
       fixed
       app
-      width="100%"
+      width="70%"
       dark
     >
       <div class="py-1 d-flex justify-end">
@@ -46,7 +46,7 @@
           }}</span>
         </v-tab>
       </v-tabs>
-      <bestill-time-button />
+      <bestill-time-button class="d-none d-md-block" />
     </v-app-bar>
     <v-main>
       <Nuxt />

@@ -20,8 +20,8 @@
               <v-card-text class="pt-md-8">
                 <v-row>
                   <v-col cols="3" md="12" class="text-md-center">
-                    <v-avatar size="100" color="orange lighten-5">
-                      <v-icon size="60" color="orange darken-1">{{
+                    <v-avatar size="80" color="orange lighten-5">
+                      <v-icon size="50" color="orange darken-1">{{
                         card.icon
                       }}</v-icon>
                     </v-avatar>

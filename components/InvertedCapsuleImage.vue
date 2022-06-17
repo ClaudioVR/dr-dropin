@@ -1,9 +1,11 @@
 <template>
   <div>
-    <div class="outer">
-      <div class="capsule red">
-        wrapper
-        <v-img id="image" height="500" width="1000" :src="imageSrc"></v-img>
+    <div class="pa-3">
+      <div class="outer">
+        <div class="capsule red">
+          wrapper
+          <v-img id="image" height="500" width="1000" :src="imageSrc"></v-img>
+        </div>
       </div>
     </div>
   </div>
@@ -24,22 +26,22 @@ export default {
 
 <style scoped>
 .outer {
-  /* background-color: red; */
-  height: 500px;
+  margin: 0 auto;
+  height: 400px;
+  width: auto;
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .capsule {
-  /* background-color: red; */
   overflow: hidden;
   border: none;
   color: black;
   border-radius: 150px;
   height: 300px;
-  width: 500px;
+  width: 98%;
   transform: rotate(45deg);
-  /* margin: 100px 150px 100px 0; */
 }
 
 #image {

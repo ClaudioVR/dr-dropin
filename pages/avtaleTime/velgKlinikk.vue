@@ -40,28 +40,28 @@ export default {
           time: '15 minutter',
           address: 'Dronning Eufemias gate 9',
           gmaps:
-            'https://www.google.com/maps/place/Dr.Dropin+Barcode/@59.9085102,10.7519048,17z/data=!3m1!4b1!4m5!3m4!1s0x46416f79355dfcfb:0xe5dc2738b0f0c153!8m2!3d59.9085102!4d10.7540935',
+            'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000.4240070974158!2d10.751904816095783!3d59.90851018186524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416f79355dfcfb%3A0xe5dc2738b0f0c153!2sDr.Dropin%20Barcode!5e0!3m2!1sno!2sno!4v1655454000979!5m2!1sno!2sno',
         },
         {
           name: 'Bislett',
           time: '2 timer',
           address: 'Dalsbergstien 18',
           gmaps:
-            'https://www.google.com/maps/place/Dr.Dropin+Bislett/@59.9230238,10.7313855,17z/data=!3m1!4b1!4m5!3m4!1s0x46416f9fdbd3f5d1:0x58190519c481e385!8m2!3d59.9230239!4d10.7358702',
+            'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.5494865647322!2d10.733681515925241!3d59.9230238818705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416f1bd7ce94a5%3A0x80a71e99fd19a1cb!2sDr.Dropin!5e0!3m2!1sno!2sno!4v1655454067770!5m2!1sno!2sno',
         },
         {
           name: 'Bogstadveien',
           time: '2 timer',
           address: 'Bogstadsveien 30',
           gmaps:
-            'https://www.google.com/maps/place/Dr.Dropin+Bogstadveien/@59.9261629,10.7185131,17z/data=!3m1!4b1!4m5!3m4!1s0x46416dd9e228faad:0x5101a80cf3c7e658!8m2!3d59.9261629!4d10.7207018',
+            'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.360329774423!2d10.71851311592536!3d59.92616288187158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416dd9e228faad%3A0x5101a80cf3c7e658!2sDr.Dropin%20Bogstadveien!5e0!3m2!1sno!2sno!4v1655454206386!5m2!1sno!2sno',
         },
         {
           name: 'Frogner',
           time: '15 minutter',
           address: 'Niels Juels gate 27',
           gmaps:
-            'https://www.google.com/maps/place/Dr.Dropin+Frogner/@59.9162629,10.7121976,17z/data=!3m1!4b1!4m5!3m4!1s0x46416d72a4b88541:0xddd6c4326c366322!8m2!3d59.9162629!4d10.7143863',
+            'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.9568854400366!2d10.712197615924955!3d59.916262881868086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416d72a4b88541%3A0xddd6c4326c366322!2sDr.Dropin%20Frogner!5e0!3m2!1sno!2sno!4v1655454240773!5m2!1sno!2sno',
         },
       ],
     }

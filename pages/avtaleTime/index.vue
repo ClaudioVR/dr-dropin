@@ -89,7 +89,7 @@ export default {
     toNextStep(title) {
       if (title === 'Allmennlege') {
         this.$store.commit('setProgress', 20)
-        this.$router.push('/velgBehandling')
+        this.$router.push('/avtaleTime/velgBehandling')
       }
     },
   },

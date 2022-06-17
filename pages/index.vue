@@ -26,7 +26,7 @@
             </div>
             <v-btn
               nuxt
-              to="/bestillTime"
+              to="/avtaleTime"
               class="mt-5 py-5"
               width="200"
               x-large

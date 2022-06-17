@@ -51,8 +51,56 @@
     <v-main>
       <Nuxt />
     </v-main>
-    <v-footer absolute app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer class="primary white--text" absolute app>
+      <v-container grid-list-xs>
+        <v-row>
+          <v-col cols="12" md="5" offset-md="1">
+            <div class="mb-8">
+              <NuxtLink to="/">
+                <div class="d-flex">
+                  <p class="my-0">{{ title }}</p>
+                  <NuxtLogo class="ml-1" />
+                </div>
+              </NuxtLink>
+            </div>
+            <div class="mt-8">
+              <p class="text-h4">Alle helsetjenester</p>
+              <p class="text-h4">Time på dagen</p>
+              <p class="text-h4">Fast pris</p>
+              <bestill-time-button class="mt-8" />
+            </div>
+          </v-col>
+          <v-col cols="12" md="5" offset-md="1">
+            <v-btn class="mr-3" color="#00DC82" depressed fab
+              ><v-icon size="43" color="white">mdi-facebook</v-icon></v-btn
+            >
+            <v-btn class="mr-3" color="#00DC82" depressed fab
+              ><v-icon size="30" color="white">mdi-instagram</v-icon></v-btn
+            >
+            <v-btn
+              class="mr-3"
+              color="#00DC82"
+              depressed
+              fab
+              @click="reouteToGithub"
+              ><v-icon size="30" color="black">mdi-github</v-icon></v-btn
+            >
+          </v-col>
+          <v-row>
+            <v-col cols="12" md="">
+              <p class="white--text text-center">
+                2022 - A mock Vue.js project by
+                <a
+                  class="blue--text"
+                  href="https://no.linkedin.com/in/claudio-rescigno-6b0531177?original_referer=https%3A%2F%2Fwww.google.com%2F"
+                  target="_blank"
+                  >Claudio Rescigno</a
+                >
+              </p>
+            </v-col>
+          </v-row>
+        </v-row>
+      </v-container>
     </v-footer>
   </v-app>
 </template>
@@ -150,6 +198,11 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    reouteToGithub() {
+      window.open('https://github.com/ClaudioVR/dr-dropin', '_blank')
+    },
   },
 }
 </script>

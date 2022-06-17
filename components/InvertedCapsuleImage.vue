@@ -2,7 +2,7 @@
   <div>
     <div class="pa-3">
       <div class="outer">
-        <div class="capsule red">
+        <div class="capsule">
           wrapper
           <v-img id="image" height="500" width="1000" :src="imageSrc"></v-img>
         </div>

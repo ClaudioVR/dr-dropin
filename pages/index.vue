@@ -1,5 +1,30 @@
 <template>
   <v-container fluid>
+    <v-dialog
+      v-model="dialog"
+      max-width="500px"
+      transition="dialog-transition"
+      @click:outside="setSessionStorage"
+    >
+      <v-card>
+        <v-card-title class="red white--text d-flex">
+          <span class="text-h4">Warning</span>
+          <v-spacer></v-spacer>
+          <v-btn color="white" text fab small @click="setSessionStorage"
+            ><v-icon>mdi-close</v-icon></v-btn
+          >
+        </v-card-title>
+        <v-card-text class="pt-8 text-center">
+          <p class="text-h6">
+            This is <span class="red--text font-weight-bold">NOT</span> the real
+            Dr.Dropin website!
+          </p>
+          <p class="text-body-1">This is simply a frontend design project!</p>
+          <v-divider></v-divider>
+          <p class="mt-5">2022 - Claudio Rescigno</p>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
     <v-row>
       <v-col class="primary pb-12" cols="12">
         <!-- Home hero section -->
@@ -184,6 +209,7 @@ export default {
   name: 'IndexPage',
   data() {
     return {
+      dialog: false,
       bulletPoints: [
         'Fast og fornuftige priser',
         'Kort ventetid',
@@ -247,6 +273,19 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    if (sessionStorage.warning) {
+      this.dialog = false
+    } else {
+      this.dialog = true
+    }
+  },
+  methods: {
+    setSessionStorage() {
+      this.dialog = false
+      sessionStorage.warning = true
+    },
   },
 }
 </script>

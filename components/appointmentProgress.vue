@@ -9,7 +9,7 @@
         <v-progress-linear
           v-model="progress"
           :color="progressColor"
-          height="15"
+          height="10"
           class="rounded-lg mx-12"
         ></v-progress-linear>
         <v-btn text color="white" @click="$router.push('/')">
